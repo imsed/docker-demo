@@ -1,7 +1,7 @@
 pipeline {
    agent any
    def commit_id
-	stages {
+      stages {
    stage('Preparation') {
      checkout scm
      sh "git rev-parse --short HEAD > .git/commit-id"                        
@@ -32,7 +32,7 @@ pipeline {
 		resultsFile: 'prisma-cloud-scan-results.json',
 		ignoreImageBuildTime:true
 	}
-   }
+}
 }
     
     post {
